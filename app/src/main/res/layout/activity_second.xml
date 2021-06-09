@@ -8,12 +8,6 @@
     tools:context=".activity.SecondActivity">
 
     <Button
-        android:id="@+id/bt_send_msg"
-        android:text="给MainActivity发消息"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
         android:id="@+id/bt_get_user_info"
         android:layout_marginTop="20dp"
         android:text="模拟获取用户信息"

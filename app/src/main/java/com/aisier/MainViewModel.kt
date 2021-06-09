@@ -2,7 +2,9 @@ package com.aisier
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import com.aisier.architecture.*
+import com.aisier.architecture.LoadState
+import com.aisier.architecture.SuccessState
+import com.aisier.architecture.ToastState
 import com.aisier.architecture.base.BaseResult
 import com.aisier.architecture.base.BaseViewModel
 import com.aisier.bean.TestBean
@@ -51,13 +53,5 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
                 .url(url)
                 .build()
         client.newCall(request).execute().use { response -> return response.body!!.string() }
-    }
-
-    fun clickNoNet() {
-        stateActionEvent.postValue(ErrorState("没有网络"))
-    }
-
-    fun clickNoData() {
-        stateActionEvent.postValue(EmptyState)
     }
 }
