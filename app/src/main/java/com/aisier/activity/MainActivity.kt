@@ -2,25 +2,21 @@ package com.aisier.activity
 
 import android.util.Log
 import androidx.activity.viewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.aisier.MainFragment
 import com.aisier.MainViewModel
 import com.aisier.R
 import com.aisier.architecture.base.BaseActivity
 import com.aisier.architecture.util.go
-import com.aisier.architecture.util.viewBinding
 import com.aisier.databinding.ActivityMainBinding
 import com.aisier.util.TimerShareLiveData
 import com.aisier.util.UserCacheLiveData
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(R.layout.activity_main) {
 
     private val mViewModel by viewModels<MainViewModel>()
 
     private val mBinding by viewBinding(ActivityMainBinding::bind)
-
-    override val layoutResId: Int
-        get() = R.layout.activity_main
-
 
     override fun init() {
         initData()

@@ -33,5 +33,7 @@ ext {
             "gson"                   : "com.google.code.gson:gson:2.8.6",
             "okhttp3"                : "com.squareup.okhttp3:okhttp:4.1.0",
 
+            "viewbindingdelegate"    : 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.4.6'
+
     ]
 }

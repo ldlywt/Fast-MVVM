@@ -15,18 +15,14 @@ import com.gyf.immersionbar.ImmersionBar
  * version: 1.2
 </pre> *
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity(@LayoutRes contentLayoutId: Int) : AppCompatActivity(contentLayoutId) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStatusBar()
-        setContentView(layoutResId)
         init()
         initNetworkStateManager()
     }
-
-    @get:LayoutRes
-    protected abstract val layoutResId: Int
 
     protected abstract fun init()
 

@@ -1,10 +1,11 @@
 package com.aisier
 
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.activityViewModels
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.aisier.architecture.anno.FragmentConfiguration
 import com.aisier.architecture.base.BaseFragment
-import com.aisier.architecture.util.viewBinding
 import com.aisier.databinding.FragmentMainBinding
 
 /**
@@ -23,8 +24,8 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     private val mViewModel by activityViewModels<MainViewModel>()
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         mViewModel.resultLiveData.observe(viewLifecycleOwner) {
             mBinding.text.text =
                 it[0].showName + "   是否展示： " + it[0].isShow + "\n" + it[1].showName + "   是否展示： " + it[1].isShow
